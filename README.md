@@ -6,7 +6,7 @@ Práctica grupal de la asignatura **Desarrollo Web**. El proyecto implementa un 
 
 - Miguel Peñafiel
 - Ricardo Landívar
-- Danika Reyes
+- Mariana Reyes
 - Carlos Llivisupa
 - Jackson Reyes
 
