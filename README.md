@@ -83,11 +83,9 @@ No requiere paquetes ni instalación.
 5. Seleccionar `main` y `/ (root)`.
 6. Guardar y esperar el despliegue.
 
-## Entregables pendientes del grupo
+## Enlaces de entrega
 
-Antes de entregar la actividad se deben completar y verificar:
+* **Repositorio de GitHub:** [GUIAPRACTICA1_DW](https://github.com/mpenafielc5/GUIAPRACTICA1_DW)
+* **GitHub Pages:** [Ver aplicación publicada](https://mpenafielc5.github.io/GUIAPRACTICA1_DW/)
+* **Video demostrativo:** [Ver video en Google Drive](https://drive.google.com/file/d/1lJXlAt4zay0iYzb99aQyBQpfN0LoVxHV/view?usp=sharing)
 
-- Enlace público del repositorio de GitHub.
-- Video demostrativo grabado desde computador, de máximo 3 minutos.
-- Enlace de Google Drive del video con permisos de visualización.
-- Documento final/PDF con ambos enlaces.
