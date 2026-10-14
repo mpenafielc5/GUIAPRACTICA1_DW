@@ -1,91 +1,6 @@
-# FormLab · Prácticas Experimentales 1 y 2
+# FormLab - Registro y Login Dinámico
 
-FormLab reúne la evolución de dos prácticas de Desarrollo Web. La Práctica Experimental 1 se desarrolló con HTML5, CSS y JavaScript; en la Práctica Experimental 2 el mismo formulario se integra dentro de una Landing Page construida con React, JSX y Bootstrap, conservando y mejorando sus validaciones, eventos y diseño responsive.
-
-## Tecnologías
-
-- HTML5, CSS3 y JavaScript como base de la Práctica Experimental 1.
-- React para componentes funcionales y manejo de estado.
-- JSX para estructurar la interfaz dentro de los componentes.
-- Bootstrap para grid responsive, navegación, formularios, botones, cards, alertas y utilidades.
-- CSS personalizado para conservar la identidad visual de FormLab.
-- Vite como entorno de desarrollo y compilación.
-- GitHub Actions para compilar y publicar la aplicación en GitHub Pages.
-
-## Componentes principales
-
-- `SiteNavbar`: navegación responsive y selector de tema claro/oscuro.
-- `Hero`: explica la evolución de la Práctica 1 a la Práctica 2.
-- `Features`: tarjetas informativas creadas desde datos.
-- `AuthSection`: cambia dinámicamente entre registro y login.
-- `RegisterForm`: formulario controlado con `useState` y validaciones.
-- `LoginForm`: inicio de sesión de demostración basado en la cuenta creada durante la sesión.
-- `StatusAlert`: mensajes dinámicos de éxito y error.
-- `Team`: integrantes del grupo.
-- `Footer`: cierre de la landing.
-
-## Validaciones
-
-Registro:
-- nombre y apellido;
-- correo válido;
-- edad entre 18 y 99;
-- teléfono de 7 a 15 dígitos;
-- selección de perfil;
-- contraseña de mínimo 8 caracteres, con mayúscula, minúscula y número;
-- confirmación de contraseña;
-- aceptación de términos.
-
-El login es una simulación únicamente de frontend. La cuenta se mantiene en el estado de React mientras la aplicación permanece abierta. No existe backend ni autenticación real.
-
-## Instalación local
-
-Requisito: Node.js y npm.
-
-```bash
-npm install
-npm run dev
-```
-
-Vite mostrará una dirección local, normalmente `http://localhost:5173/`.
-
-## Compilación de producción
-
-```bash
-npm run build
-npm run preview
-```
-
-`npm run build` genera la carpeta `dist/`.
-
-## Integración de Bootstrap
-
-Bootstrap está declarado como dependencia del proyecto y se importa desde `src/main.jsx`:
-
-```js
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-```
-
-La landing utiliza `container`, `row`, `col-*`, `navbar`, `card`, `btn`, `form-control`, `form-select`, `alert`, `nav-pills` y utilidades responsive, combinadas con estilos propios en `src/styles.css`.
-
-## GitHub Pages
-
-El repositorio grupal es `GUIAPRACTICA1_DW`. `vite.config.js` utiliza:
-
-```js
-base: '/GUIAPRACTICA1_DW/'
-```
-
-para que los assets de Vite funcionen correctamente al publicar el proyecto como GitHub Pages.
-
-El workflow `.github/workflows/deploy.yml` compila la aplicación y publica `dist/` automáticamente cuando se hace `push` a `main`.
-
-En GitHub se debe configurar:
-
-**Settings → Pages → Source → GitHub Actions**
-
-No se debe usar `Deploy from a branch` para esta versión React/Vite.
+Práctica grupal de la asignatura **Desarrollo Web**. El proyecto implementa un formulario web responsive de registro e inicio de sesión utilizando HTML5, CSS y JavaScript, con estilos, eventos y validaciones del lado del cliente.
 
 ## Integrantes
 
@@ -95,15 +10,82 @@ No se debe usar `Deploy from a branch` para esta versión React/Vite.
 - Carlos Llivisupa
 - Jackson Reyes
 
-## Entrega
+## Objetivo
 
-La guía solicita un PDF que incluya:
+Desarrollar un formulario web utilizando HTML5, CSS y JavaScript, aplicando estilos, eventos y validaciones del lado del cliente para garantizar el ingreso correcto de los datos.
 
-1. enlace al video demostrativo en Google Drive (máximo 3 minutos);
-2. enlace directo al repositorio GitHub.
+## Tecnologías
 
-Antes de entregar, comprobar ambos enlaces desde una ventana privada y verificar que la página publicada cargue sin errores.
+- HTML5 semántico
+- CSS3
+- Flexbox y CSS Grid
+- JavaScript (DOM, eventos y validaciones)
+- LocalStorage para recordar el tema y simular una cuenta de demostración
+- Web Crypto API para comparar la contraseña de la demostración mediante un hash local
 
-## Nota de publicación en GitHub Pages
+## Funcionalidades
 
-La configuración de producción usa `base: './'` en Vite y un workflow de GitHub Actions que compila el proyecto y publica la carpeta `dist`. Para Pages debe utilizarse **Source: GitHub Actions**; `Deploy from a branch` sobre `main / (root)` sirve el código fuente de Vite y no la aplicación compilada.
+- Formulario dinámico con pestañas de **Registro** e **Inicio de sesión**.
+- Más de cinco campos diferentes en el registro: nombre, correo, edad, teléfono, perfil, contraseña y confirmación.
+- Uso de `form`, `label`, `input`, `select` y `button`.
+- Atributos HTML como `required`, `placeholder`, `min`, `max`, `minlength` y `pattern`.
+- Validaciones JavaScript mediante eventos `input`, `blur`, `change` y `submit`.
+- Validación de correo electrónico.
+- Contraseña de mínimo 8 caracteres con mayúscula, minúscula y número.
+- Confirmación de contraseña.
+- Validación de edad entre 18 y 99 años.
+- Validación de teléfono entre 7 y 15 dígitos.
+- Mensajes de error y éxito sin recargar la página.
+- Botones para mostrar u ocultar contraseñas.
+- Indicador visual de fortaleza de contraseña.
+- Inicio de sesión simulado contra la cuenta creada en el navegador.
+- Tema claro y oscuro con preferencia guardada.
+- Diseño responsive para móvil, tablet y escritorio.
+- Accesibilidad básica con etiquetas, `aria-live`, estados y foco visible.
+
+## Importante sobre la autenticación
+
+Este proyecto es una **demostración académica front-end**. No existe backend ni base de datos real. La cuenta se guarda únicamente en el navegador para poder demostrar el flujo registro/login; no debe utilizarse este mecanismo en una aplicación real.
+
+## Estructura
+
+```text
+formulario-registro-login/
+├── assets/
+│   └── favicon.svg
+├── css/
+│   └── styles.css
+├── docs/
+│   ├── escritorio.png
+│   ├── movil.png
+│   └── tablet.png
+├── js/
+│   └── script.js
+├── .nojekyll
+├── index.html
+└── README.md
+```
+
+## Ejecución local
+
+No requiere paquetes ni instalación.
+
+1. Abrir la carpeta en Visual Studio Code.
+2. Abrir `index.html` directamente en el navegador o utilizar la extensión Live Server.
+3. Probar primero el registro y luego el inicio de sesión con la misma cuenta.
+
+## Publicación en GitHub Pages
+
+1. Crear un repositorio público en GitHub.
+2. Subir todos los archivos del proyecto.
+3. Entrar a **Settings -> Pages**.
+4. En **Build and deployment**, seleccionar **Deploy from a branch**.
+5. Seleccionar `main` y `/ (root)`.
+6. Guardar y esperar el despliegue.
+
+## Enlaces de entrega
+
+* **Repositorio de GitHub:** [GUIAPRACTICA1_DW](https://github.com/mpenafielc5/GUIAPRACTICA1_DW)
+* **GitHub Pages:** [Ver aplicación publicada](https://mpenafielc5.github.io/GUIAPRACTICA1_DW/)
+* **Video demostrativo:** [Ver video en Google Drive](https://drive.google.com/file/d/1lJXlAt4zay0iYzb99aQyBQpfN0LoVxHV/view?usp=sharing)
+
