@@ -103,3 +103,7 @@ La guía solicita un PDF que incluya:
 2. enlace directo al repositorio GitHub.
 
 Antes de entregar, comprobar ambos enlaces desde una ventana privada y verificar que la página publicada cargue sin errores.
+
+## Nota de publicación en GitHub Pages
+
+La configuración de producción usa `base: './'` en Vite y un workflow de GitHub Actions que compila el proyecto y publica la carpeta `dist`. Para Pages debe utilizarse **Source: GitHub Actions**; `Deploy from a branch` sobre `main / (root)` sirve el código fuente de Vite y no la aplicación compilada.
