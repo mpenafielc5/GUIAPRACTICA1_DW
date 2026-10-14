@@ -91,7 +91,7 @@ No se debe usar `Deploy from a branch` para esta versión React/Vite.
 
 - Miguel Peñafiel
 - Ricardo Landívar
-- Danika Reyes
+- Mariana Reyes
 - Carlos Llivisupa
 - Jackson Reyes
 
