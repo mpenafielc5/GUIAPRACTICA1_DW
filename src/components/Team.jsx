@@ -1,7 +1,7 @@
 const members = [
   'Miguel Peñafiel',
   'Ricardo Landívar',
-  'Danika Reyes',
+  'Mariana Reyes',
   'Carlos Llivisupa',
   'Jackson Reyes'
 ]

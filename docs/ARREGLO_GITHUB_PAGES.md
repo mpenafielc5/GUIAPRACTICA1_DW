@@ -1,31 +1,37 @@
-# Arreglo de GitHub Pages para FormLab
+# Publicación de FormLab en GitHub Pages
 
-Esta versión usa la misma estrategia de despliegue que la landing React de TechLab:
+Este proyecto está configurado para el repositorio:
 
-- `vite.config.js` utiliza `base: './'` para generar rutas relativas.
-- `.github/workflows/deploy.yml` compila React con Vite y publica `dist` mediante GitHub Actions.
-- La pestaña del navegador muestra únicamente `FormLab`.
+`mpenafielc5/GUIAPRACTICA1_DW`
 
-## Importante
+La configuración de Vite usa:
 
-El código fuente React/Vite NO debe publicarse directamente con `main / (root)`.
-La carpeta que debe llegar a GitHub Pages es `dist`, generada por `npm run build`.
-El workflow incluido hace esto automáticamente.
+```js
+base: '/GUIAPRACTICA1_DW/'
+```
 
-En GitHub usar:
+El workflow `.github/workflows/deploy.yml` compila el proyecto y publica `dist`.
 
-**Settings > Pages > Source > GitHub Actions**
+## Configuración obligatoria en GitHub
 
-Luego hacer un nuevo push o ejecutar manualmente el workflow:
+En el repositorio abre:
 
-**Actions > Publicar FormLab en GitHub Pages > Run workflow**
+**Settings > Pages > Build and deployment > Source > GitHub Actions**
 
-## Comprobar localmente
+No uses `Deploy from a branch` para esta versión React + Vite.
+
+Después de reemplazar los archivos:
 
 ```bash
 npm install
 npm run build
-npm run preview
+git add .
+git commit -m "Corregir FormLab y despliegue en GitHub Pages"
+git push
 ```
 
-Si el preview funciona, el build es válido.
+Luego revisa **Actions > Publicar FormLab en GitHub Pages** y comprueba que `build` y `deploy` terminen correctamente.
+
+Página esperada:
+
+`https://mpenafielc5.github.io/GUIAPRACTICA1_DW/`
